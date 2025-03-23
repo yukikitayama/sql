@@ -9,6 +9,7 @@
 
 ## Resource
 
+- [LeetCode problems database](https://leetcode.com/problemset/database/)
 - [Codechef](https://www.codechef.com/)
 - Concept
   - https://www.codechef.com/learn/course/sql/SQ00LS03/problems/GSQ53
