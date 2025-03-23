@@ -81,3 +81,69 @@ SELECT * FROM Employees;
   - Multiple users use applications simultaneously and must not conflict
   - System failure like power outages, network issues can happen but it should not corrupt or lose our data.
 
+## Locking
+
+- Maintain data consistency and integrity in multi-user database environments
+- Prevents concurrent transactions
+- Row-level locks
+  - Restricts access to individual rows within a table
+  - High concurrency: multiple transactions can operate on different rows of the same table
+  - Reduced contention: less blocking and waiting time for transactions
+  - Improved performance: faster transaction processing due to increased concurrency
+  - Increased overhead: managing a large number of row-level locks can consume significant system resources
+  - Potential for deadlocks: deadlocks can occur if two or more transactions are waiting for each other to release locks on rows.
+- Table-leve locks
+  - When a transaction acquires a table-level lock, it locks the entire table, preventing other transactions from accessing or modifying any row in that table.
+  - Simpler management: fewer locks to manage compared to row-level locks
+  - Lower overhead: less system resources are required to manage table-level locks
+  - Reduced concurrency: only one transaction can access the table at a time
+  - Increased contention: transactions may have to wait longer for the table to become available
+  - Poorer performance: slower transaction processing due to reduced concurrency
+
+## Deadlock
+
+- A deadlock occurs when two or more transactions are blocked indefinitely, waiting for each other to release the resources (locks) that they need.
+- 4 necessary conditions must hold for a deadlock to occur
+  - Mutual exclusion: a resource can only be held by one transaction at a time
+  - Hold and wait: a transaction holding a resource can request additional resources
+  - No preemption: resources cannot be forcibly taken away from a transaction
+    - They must be released voluntarily
+  - Circular waitL a set of transactions exists such that each transaction is waiting for a resource held by another transaction in the set.
+- Handling deadlocks
+  - Deadlock detection: the database periodically checks for circular wait conditions
+  - Deadlock prevention: strategies that prevent the four necessary conditions from occurring
+  - Deadlock avoidance: carefully allocating resources to prevent the possibility of deadlocks
+  - Deadlock resolution (victim selection): choosing one or more victim transactions to be rolled back, releasing their locks and allowing other transactions to proceed.
+
+## Isolation levels
+
+- Higher isolation levels provide greater consistency but can reduce concurrency
+- Lower isolation levels increase concurrency but may lead to various concurrency anomalies
+- Appropriate isolation level depends on the application's requirements.
+- Common isolation levels
+  - Read uncommitted (dirty read): the lowest level. Transactions can read uncommited changes made by other transactions
+    - Highest concurrency but prone to inconsistencies
+  - Read committed: transactions can only read committed changes made by other transactions
+    - Dirty reads are prevented
+    - Non-repeatable reads and phantom reads can still occur.
+  - Repeatable read: transactions are guaranteed to see the same data throughout their execution
+    - Non-repeatable reads are prevented
+    - Phantom reads can still occur.
+  - Serializable: the highest level. Transactions appear to execute as if they were running one at a time.
+    - Highest consistency but can reduce concurrency
+- Concurrency anomalies
+  - **Dirty read**: reading uncommitted data
+  - **Non-repeatable read**: reading the same row twice within a transaction, and the row's value is changed by another transaction in between.
+  - **Phantom read**: a transaction reads a set of rows based on a condition.
+    - Another transaction inserts or deletes rows that match the condition, causing the first transaction to see a different set of rows if it repeats the read.
+
+## Aggregate function 
+
+- `SUM()` returns the summation of all **non-NULL values**.
+- `COUNT()` counts all **non-NULL values**.
+- `AVG()` returns the average of all **non-NULL values**.
+- Nesting of aggregate functions
+  - Nesting of aggregate functions means using one aggregate function inside another 
+  - i.e. output of one aggregate function is used as input for another aggregate function.
+  - **It's possible to have any number of levels**.
+  - Example : SELECT AVG(SUM(column_name)) AS avg_sum_value FROM table_name;
