@@ -147,3 +147,7 @@ SELECT * FROM Employees;
   - i.e. output of one aggregate function is used as input for another aggregate function.
   - **It's possible to have any number of levels**.
   - Example : SELECT AVG(SUM(column_name)) AS avg_sum_value FROM table_name;
+
+## Subquery
+
+- **Scalar subquery** executes only once for the entire outer query.
