@@ -39,3 +39,8 @@ percentile_cont(0.75) within group (order by salary) over(partition by departmen
 - BIT_AND(column) converts numbers in column to binary representation, and do bitwise AND over all the numbers
 - BIT_OR(column) converts numbers in column to binary representation, and do bitwise OR over all the numbers
 - https://leetcode.com/problems/bitwise-user-permissions-analysis/description/
+
+## Concatenate vertical multiple rows to horizontal one row
+
+- `GROUP_CONCAT(col ORDER BY col SEPARATOR ', ')` converts `[[2], [1], [3]]` into `[[1, 2, 3]]`
+- [3328. Find Cities in Each State II](https://leetcode.com/problems/find-cities-in-each-state-ii/description/)

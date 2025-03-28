@@ -151,3 +151,7 @@ SELECT * FROM Employees;
 ## Subquery
 
 - **Scalar subquery** executes only once for the entire outer query.
+- **Correlated subquery** is a subquery that refers to values from the outer query.
+  - e.g., subquery (inner query) uses the table in outer query (query outside subquery) in WHERE statement
+  - https://stackoverflow.com/questions/66327887/what-are-correlated-subqueries-and-why-is-it-that-we-should-avoid-them-if-pos
+  - https://www.geeksforgeeks.org/sql-correlated-subqueries/
