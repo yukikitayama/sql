@@ -9,6 +9,7 @@
 - `REGEXP` and `RLIKE` are synonyms for `REGEXP_LIKE()`
   - `col REGEXP 'expression'` is equal to `REGEXP_LIKE(col, 'expression')` 
   - https://dev.mysql.com/doc/refman/8.4/en/regexp.html#operator_regexp
+- `+` is one or more instances of preceding element
 
 ## Technique
 
@@ -17,6 +18,8 @@
 - `REGEXP_LIKE(email, '^[a-zA-Z0-9_]+@{1}[a-zA-Z]+\.com$')`
   - One `@`, ends with `.com`, part before `@` is alphanumeric and underscore, part after `@` and before `.com` is letters only
   - Use `\` backslash to use `.` itself, not as any single character
+- **Word boundary**?
+  - https://www.regular-expressions.info/wordboundaries.html
 
 ## LeetCode
 
