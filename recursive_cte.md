@@ -6,3 +6,5 @@
   - Hard
 - [3482. Analyze Organization Hierarchy](https://leetcode.com/problems/analyze-organization-hierarchy/description/)
   - Hard
+- [3401. Find Circular Gift Exchange Chains](https://leetcode.com/problems/find-circular-gift-exchange-chains/description/)
+  - Hard

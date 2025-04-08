@@ -26,3 +26,4 @@
 - [3415. Find Products with Three Consecutive Digits](https://leetcode.com/problems/find-products-with-three-consecutive-digits/description/)
 - [3475. DNA Pattern Recognition](https://leetcode.com/problems/dna-pattern-recognition/description/)
 - [3436. Find Valid Emails](https://leetcode.com/problems/find-valid-emails/description/)
+- [3451. Find Invalid IP Addresses](https://leetcode.com/problems/find-invalid-ip-addresses/)
