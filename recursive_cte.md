@@ -8,3 +8,5 @@
   - Hard
 - [3401. Find Circular Gift Exchange Chains](https://leetcode.com/problems/find-circular-gift-exchange-chains/description/)
   - Hard
+- [3390. Longest Team Pass Streak](https://leetcode.com/problems/longest-team-pass-streak/description/)
+  - Hard
