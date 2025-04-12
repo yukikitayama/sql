@@ -7,6 +7,11 @@
   - In MySQL, `DATEDIFF`
   - In PostgreSQL, `DATE_PART`
 
+## Difficult problems
+
+- [3188. Find Top Scoring Students II](https://leetcode.com/problems/find-top-scoring-students-ii/description/)
+  - Hard
+
 ## Resource
 
 - [LeetCode problems database](https://leetcode.com/problemset/database/)
