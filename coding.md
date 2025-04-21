@@ -61,3 +61,19 @@ percentile_cont(0.75) within group (order by salary) over(partition by departmen
 - https://www.w3schools.com/sql/func_mysql_substring_index.asp
 - [3451. Find Invalid IP Addresses](https://leetcode.com/problems/find-invalid-ip-addresses/)
   - Hard
+
+## Cumulative sum
+
+- Note that `GROUP BY` doesn't appear in the code below
+
+```
+SELECT
+    product_id,
+    date,
+    SUM(amount) OVER(PARTITION BY product_ID ORDER BY date) AS cumulative_sum
+FROM
+    Orders
+ORDER BY
+    product_id,
+    date
+```
