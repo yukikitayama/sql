@@ -77,3 +77,10 @@ ORDER BY
     product_id,
     date
 ```
+
+## MINUS operator
+
+- `MINUS` operator
+- Subtract second query from the first query
+- https://www.geeksforgeeks.org/sql-minus-operator/
+- ADSI SQL 8.22
